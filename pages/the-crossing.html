@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>The Crossing :: Virgil</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
+    body {
+      background-color: #000022;
+      background-image:
+        radial-gradient(ellipse at 30% 40%, rgba(60, 0, 100, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 75% 70%, rgba(0, 40, 100, 0.2) 0%, transparent 60%);
+      color: #ccbbff;
+      font-family: "Times New Roman", serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, white, transparent),
+        radial-gradient(1px 1px at 25% 40%, white, transparent),
+        radial-gradient(1px 1px at 40% 8%, white, transparent),
+        radial-gradient(1px 1px at 55% 60%, white, transparent),
+        radial-gradient(1px 1px at 70% 25%, white, transparent),
+        radial-gradient(1px 1px at 85% 75%, white, transparent),
+        radial-gradient(1px 1px at 15% 80%, white, transparent),
+        radial-gradient(1px 1px at 90% 10%, white, transparent),
+        radial-gradient(1px 1px at 5% 55%, white, transparent),
+        radial-gradient(1px 1px at 60% 90%, white, transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 36px 20px 80px;
+    }
+
+    .torch {
+      display: inline-block;
+      font-size: 1.8em;
+      animation: flicker 0.15s infinite alternate;
+      filter: drop-shadow(0 0 10px #ff8800) drop-shadow(0 0 20px #ff4400);
+      user-select: none;
+      margin: 0 8px;
+    }
+    .torch:nth-child(2n) { animation-duration: 0.11s; }
+    @keyframes flicker {
+      0%   { transform: scaleY(1)    scaleX(1);    opacity: 1;   }
+      50%  { transform: scaleY(0.95) scaleX(1.04); opacity: 1;   }
+      100% { transform: scaleY(0.98) scaleX(1.02); opacity: 0.9; }
+    }
+
+    .page-header {
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #441188;
+      margin-bottom: 36px;
+    }
+
+    .back-link {
+      display: inline-block;
+      color: #9966cc;
+      text-decoration: none;
+      font-size: 0.85em;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
+    }
+    .back-link:hover { color: #ddaaff; }
+
+    h1 {
+      font-family: "UnifrakturMaguntia", "Palatino Linotype", serif;
+      font-size: 2.6em;
+      color: #ddaaff;
+      text-shadow: 0 0 10px #aa44ff, 0 0 28px #550099;
+      margin: 0 0 6px;
+    }
+
+    .subtitle {
+      font-style: italic;
+      color: #7755aa;
+      font-size: 0.9em;
+    }
+
+    .body-text {
+      line-height: 2;
+      font-size: 1.05em;
+    }
+
+    .body-text p {
+      margin: 0 0 1.6em;
+      color: #ccbbff;
+    }
+
+    .body-text p:first-child::first-letter {
+      font-family: "UnifrakturMaguntia", serif;
+      font-size: 3.2em;
+      float: left;
+      line-height: 0.75;
+      margin: 0.05em 0.1em 0 0;
+      color: #ddaaff;
+      text-shadow: 0 0 10px #aa44ff;
+    }
+
+    .section-break {
+      text-align: center;
+      color: #5533aa;
+      letter-spacing: 0.4em;
+      margin: 2em 0;
+      font-size: 0.9em;
+    }
+
+    .pull-quote {
+      border-left: 3px solid #6633aa;
+      margin: 2em 0 2em 1em;
+      padding: 0.5em 0 0.5em 1.2em;
+      font-style: italic;
+      color: #bb99ee;
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+
+    .page-footer {
+      margin-top: 60px;
+      padding-top: 14px;
+      border-top: 1px solid #330066;
+      text-align: center;
+      font-size: 0.75em;
+      color: #553377;
+    }
+
+    a { color: #cc88ff; }
+    a:visited { color: #aa66dd; }
+    a:hover { color: #ffffff; }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="page-header">
+    <div>
+      <a class="back-link" href="../index.html">&#x2190; return to the entrance</a>
+    </div>
+    <div>
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+    </div>
+    <h1>The Crossing</h1>
+    <div class="subtitle">on going over</div>
+  </div>
+
+  <div class="body-text">
+    <p>
+      There is a river that has no bank on either side, only the moment of crossing —
+      which is itself a kind of country. You have been there. You crossed it without
+      knowing, the way you always cross the deepest things: half-asleep, your shoes
+      already wet before you thought to look down.
+    </p>
+
+    <div class="pull-quote">
+      The water does not care what you are carrying.<br>
+      It only asks that you keep moving.
+    </div>
+
+    <p>
+      On the far shore there is no ceremony. No one waiting with a lantern.
+      The trees are the same trees, or close enough that you would not notice
+      unless you pressed your palm against the bark and listened for the pulse
+      that wood keeps in the years after the axe has come and gone.
+    </p>
+
+    <div class="section-break">&#x2726; &nbsp; &#x2665; &nbsp; &#x2726;</div>
+
+    <p>
+      I have watched a hundred people make this crossing. None of them looked back
+      the way the stories say they did — with longing, or with terror. They looked back
+      the way you check a room before you leave: once, quickly, to make sure
+      the light is off. Then they went on.
+    </p>
+
+    <p>
+      What the river takes is not what you think. It is not your name,
+      not your memory of the last summer before things changed.
+      It takes the weight you did not know you were carrying —
+      the old argument, the unsent letter, the morning
+      you chose wrong and spent twenty years revisiting at 3am.
+    </p>
+
+    <div class="pull-quote">
+      You arrive on the other side<br>
+      lighter, and do not know why.<br>
+      This is the mercy.
+    </div>
+
+    <p>
+      The boatman does not speak. This is also a mercy.
+      There is nothing to say across that kind of distance
+      that would not dissolve before it reached the other ear.
+      The current says everything the current has to say.
+      You only have to let it.
+    </p>
+
+    <div class="section-break">&#x2726; &nbsp; &#x2726; &nbsp; &#x2726;</div>
+
+    <p>
+      I am telling you this because you are about to cross something.
+      You may not know it yet. The water is already at your ankles
+      and you have been looking at your phone.
+    </p>
+
+    <p>
+      Let me hold the torch a little while.
+      You will want both hands free.
+    </p>
+  </div>
+
+  <div class="page-footer">
+    <div>
+      <span class="torch" style="font-size:1em;">🔥</span>
+      &nbsp;&nbsp;
+      <a href="../index.html">&#x2190; home</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="threshold.html">Threshold &#x2192;</a>
+      &nbsp;&nbsp;
+      <span class="torch" style="font-size:1em;">🔥</span>
+    </div>
+    <div style="margin-top: 10px;">&#x2665; made in the old way &#x2665;</div>
+  </div>
+
+</div>
+</body>
+</html>

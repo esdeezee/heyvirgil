@@ -1,1 +1,334 @@
-hello world
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>*~*~ Welcome to My Corner of the Web ~*~*</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=MedievalSharp&display=swap');
+
+    body {
+      background-color: #000022;
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(80, 0, 120, 0.3) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(0, 60, 120, 0.3) 0%, transparent 60%),
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 10px,
+          rgba(255,255,255,0.01) 10px,
+          rgba(255,255,255,0.01) 20px
+        );
+      color: #ccccff;
+      font-family: "Times New Roman", serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* Starfield */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, white, transparent),
+        radial-gradient(1px 1px at 25% 40%, white, transparent),
+        radial-gradient(1px 1px at 40% 8%, white, transparent),
+        radial-gradient(1px 1px at 55% 60%, white, transparent),
+        radial-gradient(1px 1px at 70% 25%, white, transparent),
+        radial-gradient(1px 1px at 85% 75%, white, transparent),
+        radial-gradient(1px 1px at 15% 80%, white, transparent),
+        radial-gradient(1px 1px at 90% 10%, white, transparent),
+        radial-gradient(1px 1px at 5% 55%, white, transparent),
+        radial-gradient(1px 1px at 60% 90%, white, transparent),
+        radial-gradient(1px 1px at 33% 70%, white, transparent),
+        radial-gradient(1px 1px at 77% 45%, white, transparent),
+        radial-gradient(1px 1px at 48% 30%, white, transparent),
+        radial-gradient(1px 1px at 92% 55%, white, transparent),
+        radial-gradient(1px 1px at 3% 35%, white, transparent);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 20px 10px 60px;
+    }
+
+    /* ── Torch ── */
+    .torch {
+      display: inline-block;
+      font-size: 2.4em;
+      animation: flicker 0.15s infinite alternate;
+      filter: drop-shadow(0 0 12px #ff8800) drop-shadow(0 0 24px #ff4400);
+      vertical-align: middle;
+      margin: 0 12px;
+      user-select: none;
+    }
+    .torch:nth-child(2n) { animation-duration: 0.11s; }
+    .torch:nth-child(3n) { animation-duration: 0.18s; animation-delay: 0.05s; }
+
+    @keyframes flicker {
+      0%   { transform: scaleY(1)   scaleX(1);    opacity: 1;   }
+      25%  { transform: scaleY(1.08) scaleX(0.96); opacity: 0.93; }
+      50%  { transform: scaleY(0.95) scaleX(1.04); opacity: 1;   }
+      75%  { transform: scaleY(1.05) scaleX(0.97); opacity: 0.96; }
+      100% { transform: scaleY(0.98) scaleX(1.02); opacity: 0.9; }
+    }
+
+    /* ── Header ── */
+    .site-header {
+      padding: 30px 0 10px;
+      border-bottom: 2px solid #6633aa;
+    }
+
+    .torch-row {
+      margin-bottom: 10px;
+    }
+
+    h1.site-title {
+      font-family: "UnifrakturMaguntia", "Palatino Linotype", serif;
+      font-size: 3.2em;
+      color: #ddaaff;
+      text-shadow:
+        0 0 8px #aa44ff,
+        0 0 20px #6600cc,
+        0 0 40px #330066;
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: #9988cc;
+      font-size: 1em;
+      margin: 6px 0 0;
+    }
+
+    /* ── Marquee banner ── */
+    .marquee-wrap {
+      background: #110033;
+      border-top: 1px solid #6633aa;
+      border-bottom: 1px solid #6633aa;
+      padding: 4px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      margin: 14px 0;
+    }
+    .marquee-inner {
+      display: inline-block;
+      animation: scroll-left 22s linear infinite;
+      color: #ffcc44;
+      font-size: 0.85em;
+      letter-spacing: 0.12em;
+    }
+    @keyframes scroll-left {
+      0%   { transform: translateX(100vw); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ── Welcome box ── */
+    .welcome-box {
+      background: rgba(20, 0, 50, 0.7);
+      border: 2px solid #6633aa;
+      box-shadow: 0 0 18px rgba(150, 50, 255, 0.4), inset 0 0 30px rgba(100, 0, 200, 0.1);
+      padding: 22px 28px;
+      margin: 20px auto;
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .welcome-box p {
+      line-height: 1.8;
+      color: #ccbbff;
+      margin: 0 0 12px;
+    }
+
+    .welcome-box p:last-child { margin-bottom: 0; }
+
+    /* ── Divider ── */
+    .divider {
+      color: #6633aa;
+      letter-spacing: 0.3em;
+      font-size: 0.9em;
+      margin: 24px 0;
+      opacity: 0.8;
+    }
+
+    /* ── Nav tiles ── */
+    .nav-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin: 20px auto;
+      max-width: 680px;
+    }
+
+    .nav-tile {
+      background: rgba(30, 0, 70, 0.8);
+      border: 2px solid #5522aa;
+      box-shadow: 0 0 10px rgba(120, 40, 255, 0.3);
+      padding: 18px 22px;
+      width: 180px;
+      text-decoration: none;
+      color: #ddaaff;
+      font-family: "Times New Roman", serif;
+      transition: box-shadow 0.1s, border-color 0.1s, color 0.1s;
+    }
+
+    .nav-tile:hover {
+      border-color: #cc88ff;
+      box-shadow: 0 0 22px rgba(200, 100, 255, 0.7);
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .nav-tile .tile-icon {
+      font-size: 1.8em;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .nav-tile .tile-title {
+      display: block;
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .nav-tile .tile-sub {
+      display: block;
+      font-size: 0.78em;
+      color: #9977cc;
+      font-style: italic;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      margin-top: 50px;
+      padding-top: 16px;
+      border-top: 1px solid #440088;
+      font-size: 0.75em;
+      color: #664488;
+      line-height: 2;
+    }
+
+    .counter {
+      display: inline-block;
+      background: #000;
+      border: 1px solid #6633aa;
+      padding: 2px 8px;
+      font-family: monospace;
+      color: #44ff44;
+      letter-spacing: 0.15em;
+    }
+
+    a { color: #cc88ff; }
+    a:visited { color: #aa66dd; }
+    a:hover { color: #ffffff; }
+
+    /* ── Blink ── */
+    .blink {
+      animation: blink 1.1s step-start infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Header -->
+  <div class="site-header">
+    <div class="torch-row">
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+    </div>
+    <h1 class="site-title">&#x2605; Virgil &#x2605;</h1>
+    <p class="tagline">~ your guide through the unmapped dark ~</p>
+    <div class="torch-row">
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+      <span class="torch">🔥</span>
+    </div>
+  </div>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap">
+    <span class="marquee-inner">
+      ✦ welcome, wanderer ✦ &nbsp;&nbsp;&nbsp; the forest was dark and I had lost the road &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp; come in, rest your cloak &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp; the way through is long but you are not alone &nbsp;&nbsp;&nbsp; ✦ &nbsp;&nbsp;&nbsp; best viewed at 800×600 &nbsp;&nbsp;&nbsp; ✦
+    </span>
+  </div>
+
+  <!-- Welcome -->
+  <div class="welcome-box">
+    <p>
+      You have found your way here through some grace or accident — it matters little which.
+      The torches are lit. The door is open. Come deeper if you like.
+    </p>
+    <p>
+      This is a place of slow words and older things. Of rivers that run beneath names
+      and hills that remember when they were called something else.
+      Sit with it a while.
+    </p>
+    <p>
+      Below you will find the pages. Each one is a room. Each room has its light.
+      <span class="blink">&#x25BC;</span>
+    </p>
+  </div>
+
+  <div class="divider">&#x2726;&#x2726;&#x2726; &nbsp; &#x2665; &nbsp; &#x2726;&#x2726;&#x2726;</div>
+
+  <!-- Nav -->
+  <div class="nav-grid">
+    <a class="nav-tile" href="pages/the-crossing.html">
+      <span class="tile-icon">&#x2693;</span>
+      <span class="tile-title">The Crossing</span>
+      <span class="tile-sub">on going over</span>
+    </a>
+    <a class="nav-tile" href="pages/threshold.html">
+      <span class="tile-icon">&#x26AA;</span>
+      <span class="tile-title">Threshold</span>
+      <span class="tile-sub">what waits at the door</span>
+    </a>
+    <a class="nav-tile" href="pages/the-field.html">
+      <span class="tile-icon">&#x273F;</span>
+      <span class="tile-title">The Field</span>
+      <span class="tile-sub">where the asphodel grows</span>
+    </a>
+    <a class="nav-tile" href="pages/letters.html">
+      <span class="tile-icon">&#x2709;</span>
+      <span class="tile-title">Letters</span>
+      <span class="tile-sub">words to the gone</span>
+    </a>
+  </div>
+
+  <div class="divider">&#x2726; &nbsp; &#x2726; &nbsp; &#x2726;</div>
+
+  <!-- Footer -->
+  <div class="site-footer">
+    <div>Visitors since the veil thinned: <span class="counter">001337</span></div>
+    <div>&#x2665; This site is best heard in silence &#x2665;</div>
+    <div>Made by hand in the old way &nbsp;|&nbsp; No frames. No cookies. No surveillance.</div>
+    <div style="margin-top:8px; color: #442266;">
+      <span class="torch" style="font-size:1em;">🔥</span>
+      &nbsp; geocities-haunted &nbsp;
+      <span class="torch" style="font-size:1em;">🔥</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
