@@ -1,69 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Field :: Virgil</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
     body {
-      background-color: #000022; color: #ccbbff;
-      font-family: "Times New Roman", serif; margin: 0; padding: 0;
+      background-color: #faf9f7;
+      color: #222;
+      font-family: "Times New Roman", serif;
+      margin: 0;
+      padding: 0;
     }
-    body::before {
-      content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background-image:
-        radial-gradient(1px 1px at 20% 35%, white, transparent),
-        radial-gradient(1px 1px at 50% 70%, white, transparent),
-        radial-gradient(1px 1px at 80% 20%, white, transparent),
-        radial-gradient(1px 1px at 10% 85%, white, transparent),
-        radial-gradient(1px 1px at 65% 45%, white, transparent);
-      pointer-events: none; z-index: 0;
-    }
+
     .wrapper {
-      position: relative; z-index: 1;
-      max-width: 660px; margin: 0 auto;
-      padding: 60px 20px 80px; text-align: center;
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 36px 20px 80px;
     }
-    .torch {
-      display: inline-block; font-size: 1.8em;
-      animation: flicker 0.15s infinite alternate;
-      filter: drop-shadow(0 0 10px #ff8800) drop-shadow(0 0 20px #ff4400);
-      margin: 0 8px;
+
+    .page-header {
+      text-align: center;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 36px;
     }
-    @keyframes flicker {
-      0%   { transform: scaleY(1) scaleX(1); opacity: 1; }
-      100% { transform: scaleY(0.96) scaleX(1.03); opacity: 0.9; }
+
+    .back-link {
+      display: inline-block;
+      color: #666;
+      text-decoration: none;
+      font-size: 0.85em;
+      letter-spacing: 0.1em;
+      margin-bottom: 18px;
     }
+    .back-link:hover { color: #1a1a1a; }
+
+    .tree {
+      display: inline-block;
+      font-size: 1.8em;
+      user-select: none;
+      margin: 0 4px;
+    }
+
     h1 {
-      font-family: "UnifrakturMaguntia", serif; font-size: 2.6em;
-      color: #ddaaff; text-shadow: 0 0 10px #aa44ff, 0 0 28px #550099;
-      margin: 20px 0 8px;
+      font-family: "UnifrakturMaguntia", "Palatino Linotype", serif;
+      font-size: 2.6em;
+      color: #1a1a1a;
+      margin: 0 0 6px;
     }
-    .subtitle { font-style: italic; color: #7755aa; font-size: 0.9em; margin-bottom: 40px; }
-    .coming-soon {
-      background: rgba(20, 0, 50, 0.7); border: 2px solid #6633aa;
-      box-shadow: 0 0 18px rgba(150, 50, 255, 0.4);
-      padding: 30px; font-style: italic; color: #9977cc; line-height: 2;
+
+    .epigraph {
+      margin: 32px 0 36px;
+      text-align: center;
+      font-style: italic;
+      color: #444;
+      line-height: 2;
     }
-    .back-link { color: #9966cc; text-decoration: none; font-size: 0.85em; letter-spacing: 0.1em; }
-    .back-link:hover { color: #ddaaff; }
-    a { color: #cc88ff; }
+
+    .epigraph cite {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+      font-size: 0.85em;
+      color: #666;
+    }
+
+    .body-text {
+      line-height: 2;
+      font-size: 1.05em;
+    }
+
+    .body-text p {
+      margin: 0 0 1.6em;
+      color: #222;
+    }
+
+    .body-text p:first-child::first-letter {
+      font-family: "UnifrakturMaguntia", serif;
+      font-size: 3.2em;
+      float: left;
+      line-height: 0.75;
+      margin: 0.05em 0.1em 0 0;
+      color: #1a1a1a;
+    }
+
+    .timeline-block {
+      margin: 0 0 1.6em;
+      font-size: 1.05em;
+      line-height: 2;
+    }
+
+    .timeline-title {
+      font-weight: bold;
+      color: #1a1a1a;
+      margin: 0 0 0.5em;
+    }
+
+    .timeline {
+      list-style: disc;
+      padding-left: 1.4em;
+      margin: 0;
+      color: #222;
+      line-height: 1.9;
+    }
+
+    .timeline li {
+      margin-bottom: 0.5em;
+    }
+
+    .pull-quote {
+      border-left: 3px solid #ccc;
+      margin: 2em 0 2em 1em;
+      padding: 0.5em 0 0.5em 1.2em;
+      font-style: italic;
+      color: #666;
+      font-size: 1.1em;
+      line-height: 1.7;
+    }
+
+    .page-footer {
+      margin-top: 60px;
+      padding-top: 14px;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      font-size: 0.85em;
+      color: #666;
+    }
+
+    a { color: #444; }
+    a:visited { color: #666; }
+    a:hover { color: #000; }
   </style>
 </head>
 <body>
 <div class="wrapper">
-  <div><a class="back-link" href="../index.html">&#x2190; return to the entrance</a></div>
-  <div style="margin-top:20px;">
-    <span class="torch">🔥</span><span class="torch">🔥</span><span class="torch">🔥</span>
-  </div>
-  <h1>The Field</h1>
-  <div class="subtitle">where the asphodel grows</div>
-  <div class="coming-soon">
-    <p>The asphodel is still growing here.</p>
-    <p>Everything in the field moves at the pace of the field.<br>
-    It will be ready when the roots say it is ready.</p>
-    <p>&#x2726; &nbsp; &#x2665; &nbsp; &#x2726;</p>
-  </div>
+
+  <header class="page-header">
+    <nav aria-label="Site navigation">
+      <a class="back-link" href="../index.html"><span aria-hidden="true">&#x2190;</span> return to the entrance</a>
+    </nav>
+    <div aria-hidden="true">
+      <span class="tree">🌲</span>
+      <span class="tree">🌳</span>
+      <span class="tree">🌲</span>
+    </div>
+    <h1>The Field</h1>
+  </header>
+
+  <main>
+    <div class="body-text">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <nav aria-label="Page navigation">
+      <span aria-hidden="true">🌲</span>
+      &nbsp;&nbsp;
+      <a href="../index.html"><span aria-hidden="true">&#x2190;</span> home</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <a href="letters.html">Letters <span aria-hidden="true">&#x2192;</span></a>
+      &nbsp;&nbsp;
+      <span aria-hidden="true">🌲</span>
+    </nav>
+    <div style="margin-top: 10px;">lorem ipsum dolor sit amet &#x2665;</div>
+  </footer>
+
 </div>
 </body>
 </html>
