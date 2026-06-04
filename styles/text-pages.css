@@ -127,6 +127,66 @@ a { color: #444; }
 a:visited { color: #666; }
 a:hover { color: #000; }
 
+/* ── Comparison table ── */
+.table-scroll {
+  overflow-x: auto;
+  margin: 2em 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95em;
+  line-height: 1.6;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #ccc;
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+  color: #222;
+}
+
+.comparison-table thead th {
+  font-weight: bold;
+  background-color: #f0eeeb;
+}
+
+.comparison-table tbody th {
+  font-weight: bold;
+  background-color: #f7f5f2;
+  white-space: nowrap;
+}
+
+/* ── Dialogue ── */
+.dialogue {
+  border-left: 2px solid #ccc;
+  margin: 2em 0 2em 1em;
+  padding: 0.5em 0 0.5em 1.2em;
+}
+
+.dialogue p {
+  margin: 0 0 0.8em;
+  color: #222;
+  line-height: 1.8;
+  font-size: 1.05em;
+}
+
+.dialogue p:last-child { margin-bottom: 0; }
+
+/* ── Suppress drop cap on continuation body-text blocks ── */
+.body-text.no-dropcap p:first-child::first-letter {
+  font-family: inherit;
+  font-size: inherit;
+  float: none;
+  line-height: inherit;
+  margin: 0;
+  color: inherit;
+}
+
 /* ── Coming soon teaser ── */
 .coming-soon {
   margin-top: 48px;
