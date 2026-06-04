@@ -187,6 +187,46 @@ a:hover { color: #000; }
   color: inherit;
 }
 
+/* ── Session items (#1, #2, #3) ── */
+.session-number {
+  font-family: inherit;
+  font-size: 1.05em;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 2em 0 0.2em;
+}
+
+/* ── Inline figures with captions ── */
+.inline-figure {
+  margin: 2em 0;
+}
+
+.inline-figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.inline-figure figcaption {
+  margin-top: 0.5em;
+  font-size: 0.85em;
+  color: #666;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ── Image placeholder (shown until real images are supplied) ── */
+.img-placeholder {
+  display: block;
+  background: #f0eeeb;
+  border: 2px dashed #ccc;
+  padding: 40px 20px;
+  text-align: center;
+  color: #999;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
 /* ── Coming soon teaser ── */
 .coming-soon {
   margin-top: 48px;
