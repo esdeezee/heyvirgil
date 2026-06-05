@@ -227,6 +227,19 @@ a:hover { color: #000; }
   font-size: 0.9em;
 }
 
+/* ── Body lists (bullets and numbered) ── */
+.body-list {
+  font-size: 1.05em;
+  line-height: 2;
+  padding-left: 1.6em;
+  margin: 0 0 1.6em;
+  color: #222;
+}
+
+.body-list li {
+  margin-bottom: 0.5em;
+}
+
 /* ── Coming soon teaser ── */
 .coming-soon {
   margin-top: 48px;
