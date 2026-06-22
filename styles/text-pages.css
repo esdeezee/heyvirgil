@@ -227,6 +227,24 @@ a:hover { color: #000; }
   font-size: 0.9em;
 }
 
+/* ── Tiled image group (multiple photos side by side) ── */
+.image-tile-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 2em 0;
+}
+
+.image-tile-group .inline-figure {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .image-tile-group {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Section divider (standalone em dash) ── */
 .section-divider {
   color: #999;
