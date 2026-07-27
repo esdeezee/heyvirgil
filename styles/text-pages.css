@@ -1,8 +1,17 @@
 /* UnifrakturMaguntia loaded via <link> tags in each page's <head> */
 
+:root {
+  --paper: #faf9f7;
+  --ink: #222;
+  --ink-heading: #1a1a1a;
+  --ink-muted: #666;
+  --border: #ccc;
+  --panel: #f0eeeb;
+}
+
 body {
-  background-color: #faf9f7;
-  color: #222;
+  background-color: var(--paper);
+  color: var(--ink);
   font-family: "Times New Roman", serif;
   margin: 0;
   padding: 0;
@@ -17,19 +26,19 @@ body {
 .page-header {
   text-align: center;
   padding-bottom: 24px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--border);
   margin-bottom: 36px;
 }
 
 .back-link {
   display: inline-block;
-  color: #666;
+  color: var(--ink-muted);
   text-decoration: none;
   font-size: 0.85em;
   letter-spacing: 0.1em;
   margin-bottom: 18px;
 }
-.back-link:hover { color: #1a1a1a; }
+.back-link:hover { color: var(--ink-heading); }
 
 .tree {
   display: inline-block;
@@ -41,7 +50,7 @@ body {
 h1 {
   font-family: "UnifrakturMaguntia", "Palatino Linotype", serif;
   font-size: 2.6em;
-  color: #1a1a1a;
+  color: var(--ink-heading);
   margin: 0 0 6px;
 }
 
@@ -58,7 +67,7 @@ h1 {
   margin-top: 8px;
   font-style: normal;
   font-size: 0.85em;
-  color: #666;
+  color: var(--ink-muted);
 }
 
 .body-text {
@@ -68,7 +77,7 @@ h1 {
 
 .body-text p {
   margin: 0 0 1.6em;
-  color: #222;
+  color: var(--ink);
 }
 
 .body-text p:first-child::first-letter {
@@ -77,7 +86,7 @@ h1 {
   float: left;
   line-height: 0.75;
   margin: 0.05em 0.1em 0 0;
-  color: #1a1a1a;
+  color: var(--ink-heading);
 }
 
 .timeline-block {
@@ -88,7 +97,7 @@ h1 {
 
 .timeline-title {
   font-weight: bold;
-  color: #1a1a1a;
+  color: var(--ink-heading);
   margin: 0 0 0.5em;
 }
 
@@ -96,7 +105,7 @@ h1 {
   list-style: disc;
   padding-left: 1.4em;
   margin: 0;
-  color: #222;
+  color: var(--ink);
   line-height: 1.9;
 }
 
@@ -105,11 +114,11 @@ h1 {
 }
 
 .pull-quote {
-  border-left: 3px solid #ccc;
+  border-left: 3px solid var(--border);
   margin: 2em 0 2em 1em;
   padding: 0.5em 0 0.5em 1.2em;
   font-style: italic;
-  color: #666;
+  color: var(--ink-muted);
   font-size: 1.1em;
   line-height: 1.7;
 }
@@ -117,14 +126,14 @@ h1 {
 .page-footer {
   margin-top: 60px;
   padding-top: 14px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--border);
   text-align: center;
   font-size: 0.85em;
-  color: #666;
+  color: var(--ink-muted);
 }
 
 a { color: #444; }
-a:visited { color: #666; }
+a:visited { color: var(--ink-muted); }
 a:hover { color: #000; }
 
 /* ── Comparison table ── */
@@ -143,16 +152,16 @@ a:hover { color: #000; }
 
 .comparison-table th,
 .comparison-table td {
-  border: 1px solid #ccc;
+  border: 1px solid var(--border);
   padding: 10px 14px;
   text-align: left;
   vertical-align: top;
-  color: #222;
+  color: var(--ink);
 }
 
 .comparison-table thead th {
   font-weight: bold;
-  background-color: #f0eeeb;
+  background-color: var(--panel);
 }
 
 .comparison-table tbody th {
@@ -163,14 +172,14 @@ a:hover { color: #000; }
 
 /* ── Dialogue ── */
 .dialogue {
-  border-left: 2px solid #ccc;
+  border-left: 2px solid var(--border);
   margin: 2em 0 2em 1em;
   padding: 0.5em 0 0.5em 1.2em;
 }
 
 .dialogue p {
   margin: 0 0 0.8em;
-  color: #222;
+  color: var(--ink);
   line-height: 1.8;
   font-size: 1.05em;
 }
@@ -192,7 +201,7 @@ a:hover { color: #000; }
   font-family: inherit;
   font-size: 1.05em;
   font-weight: bold;
-  color: #1a1a1a;
+  color: var(--ink-heading);
   margin: 2em 0 0.2em;
 }
 
@@ -210,7 +219,7 @@ a:hover { color: #000; }
 .inline-figure figcaption {
   margin-top: 0.5em;
   font-size: 0.85em;
-  color: #666;
+  color: var(--ink-muted);
   font-style: italic;
   line-height: 1.5;
 }
@@ -218,8 +227,8 @@ a:hover { color: #000; }
 /* ── Image placeholder (shown until real images are supplied) ── */
 .img-placeholder {
   display: block;
-  background: #f0eeeb;
-  border: 2px dashed #ccc;
+  background: var(--panel);
+  border: 2px dashed var(--border);
   padding: 40px 20px;
   text-align: center;
   color: #999;
@@ -256,7 +265,7 @@ a:hover { color: #000; }
 .time-marker {
   font-weight: bold;
   font-size: 1.05em;
-  color: #1a1a1a;
+  color: var(--ink-heading);
   margin: 2em 0 1.5em;
   line-height: 2;
 }
@@ -266,7 +275,7 @@ a:hover { color: #000; }
   margin: 1.6em 0 1.6em 2.5em;
   line-height: 2;
   font-size: 1.05em;
-  color: #222;
+  color: var(--ink);
 }
 
 .freewrite p {
@@ -283,7 +292,7 @@ a:hover { color: #000; }
   line-height: 2;
   padding-left: 1.6em;
   margin: 0 0 1.6em;
-  color: #222;
+  color: var(--ink);
 }
 
 .body-list li {
@@ -294,9 +303,9 @@ a:hover { color: #000; }
 .coming-soon {
   margin-top: 48px;
   padding-top: 24px;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--border);
   text-align: center;
-  color: #666;
+  color: var(--ink-muted);
   font-style: italic;
   font-size: 0.95em;
   line-height: 1.8;
